@@ -26,50 +26,18 @@ function App() {
 
   return (
     <>
-      <div id="container" className="container mw-50 mh-50">
+      <div id="container" className="container mw-100 mh-100">
         <h1 className='text-center '>Photographer's Showcase</h1>
         <div className="container">
-          <div className="card-group">
-            <div className="card m-5">
-              <img src={pexelsImage[0]?.src?.original} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="text-center card-title">Image By: {pexelsImage[0]?.photographer}</h5>
+          <div className="card_group">
+            {pexelsImage.map((item, id) => (
+              <div className="card m-5" key={id}>
+                <img src={item?.src?.original} style={{ height: '310px' }} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="text-center card-title">Image By: {item?.photographer}</h5>
+                </div>
               </div>
-            </div>
-            <div className="card m-5">
-              <img src={pexelsImage[1]?.src?.original} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="text-center card-title">Image By: {pexelsImage[1]?.photographer}</h5>
-              </div>
-            </div>
-            <div className="card m-5">
-              <img src={pexelsImage[2]?.src?.original} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="text-center card-title">Image By: {pexelsImage[2]?.photographer}</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div class="card-group">
-            <div class="card m-5">
-              <img src={pexelsImage[3]?.src?.original} class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="text-center card-title">Image By: {pexelsImage[3]?.photographer}</h5>
-              </div>
-            </div>
-            <div class="card m-5">
-              <img src={pexelsImage[4]?.src?.original} class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="text-center card-title">Image By: {pexelsImage[4]?.photographer}</h5>
-              </div>
-            </div>
-            <div class="card m-5">
-              <img src={pexelsImage[5]?.src?.original} class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="text-center card-title">Image By: {pexelsImage[5]?.photographer}</h5>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -5,3 +5,7 @@ div > img{
 #container{
     margin-top: 8rem;
 }
+.card_group{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
